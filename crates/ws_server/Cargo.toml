@@ -1,0 +1,41 @@
+[package]
+name = "ws_server"
+version = "0.1.0"
+edition = "2021"
+authors = ["Nick Hall"]
+description = "Enterprise-grade WebSocket server with TLS and async handling"
+license = "MIT"
+
+# ------------------------------
+# Dependencies
+# ------------------------------
+[dependencies]
+# Async runtime for Tokio
+tokio = { version = "1.36", features = ["full"] }
+
+# TLS support for async streams
+tokio-rustls = "0.23"
+rustls = "0.21"
+
+# Certificate verification library
+webpki = "0.22"
+
+# Logging / observability
+tracing = "0.2"
+tracing-subscriber = { version = "0.3", features = ["fmt", "env-filter"] }
+
+# Optional: Rate limiting or global state
+lazy_static = "1.4"
+
+# Optional: MQTT client library if you integrate later
+rumqttc = "0.19"
+
+# Optional: WebSocket handling library
+tokio-tungstenite = "0.21"
+
+# ------------------------------
+# Dev dependencies
+# ------------------------------
+[dev-dependencies]
+tokio-test = "0.4"
+

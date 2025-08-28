@@ -1,6 +1,10 @@
-[package]
-name = "rust_ws_mqtt_orchestrator"
-version = "0.1.0"
-edition = "2024"
+[workspace]
+members = [
+    "crates/ws_server",
+    "crates/mqtt_client",
+    "crates/state",
+]
 
-[dependencies]
+[profile.release]
+opt-level = "z"
+
